@@ -8,14 +8,23 @@ const styles = {
     },
 }
 
-const placeholderText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+const placeholderText = 'Description';
 
 class ReviewBody extends React.Component {
+
     render() {
         return (
             <Form.Group controlId="formControlsTextarea">
                 <Form.Label>Body</Form.Label>
-                <Form.Control as="textarea" rows="3" laceholder={placeholderText} style={styles.textarea} />
+                <Form.Control as="textarea" rows="3"
+                    placeholder={placeholderText}
+                    style={styles.textarea}
+                    value={this.props.boday}
+                    onChange={this.props.onBodyTextChange}
+                    required />
+                <Form.Control.Feedback type="invalid">
+                    Please enter a value
+                </Form.Control.Feedback>
             </Form.Group>
         )
     }

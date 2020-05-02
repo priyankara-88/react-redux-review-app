@@ -1,23 +1,19 @@
-import React from 'react'
+import React from 'react';
 import { ListGroupItem, } from 'react-bootstrap';
 import StarRatingComponent from 'react-star-rating-component';
-
-const placeholder = {
-        "body": "Morbi mollis vehicula dolor at auctor.",
-        "stars": 5
-    }
 
 class Review extends React.Component {
 
     render() {
         return (
             <ListGroupItem>
-                <p>{ placeholder.body }</p>
+                <p>{this.props.body}</p>
                 <StarRatingComponent
                     name="star-rating"
-                    value={placeholder.stars}
+                    value={this.props.rating}
                     editing={false}
                 />
+                <button onClick={() => { this.props.onRemoveReview(this.props.id) }}>Click</button>
             </ListGroupItem>
         )
     }

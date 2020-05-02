@@ -15,10 +15,6 @@ const styles = {
 
 class ReviewStarRating extends React.Component {
 
-    onStarClick = (nextValue, prevValue) => {
-        console.log('onStarClick', nextValue, prevValue)
-    }
-
     render() {
         return (
             <Form.Group>
@@ -27,7 +23,7 @@ class ReviewStarRating extends React.Component {
                 </Form.Label>
                 <StarRatingComponent
                     name="star-rating"
-                    onStarClick={this.onStarClick}
+                    onStarClick={this.props.onChangeRating}
                 />
             </Form.Group>
         )

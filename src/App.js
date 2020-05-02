@@ -1,11 +1,11 @@
 import React from 'react'
-import ReviewForm from './Components/ReviewForm/ReviewForm'
-import ReviewsList from './Components/ReviewsList/ReviewsList'
 import { Col, Row } from 'react-bootstrap'
+import ManageReviewsList from './Components/ReviewsList/ManageReviewsList'
+import ManageReviewForm from './Components/ReviewForm/ManageReviewForm'
 
-function styles () {
+function styles() {
     return {
-        marginTop:'20px'
+        marginTop: '20px'
     }
 }
 
@@ -14,10 +14,10 @@ class App extends React.Component {
         return (
             <div className="container" style={styles()}>
                 <Row>
-                  <Col md={4} mdOffset={4}>
-                    <ReviewForm />
-                    <ReviewsList />
-                  </Col>
+                    <Col md={4} mdoffset={4}>
+                        <ManageReviewForm />
+                        <ManageReviewsList />
+                    </Col>
                 </Row>
             </div>
         )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ListGroup } from 'react-bootstrap';
-import Review from './Review';
+import MangeReview from './MangeReview';
 
 const styles = {
     wrapper: {
@@ -8,17 +8,14 @@ const styles = {
     }
 }
 
-
-
 class ReviewsList extends React.Component {
 
     render() {
         return (
             <div style={styles.wrapper}>
                 <ListGroup>
-                    <h5>Display the list of reviews here...</h5>
-                    <p>Example:</p>
-                    <Review />
+                    <h5>List of reviews...</h5>
+                    {this.props.reviews.map(review => <MangeReview key={review.id} {...review} />)}
                 </ListGroup>
             </div>
         )
