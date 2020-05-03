@@ -1,5 +1,5 @@
 import axios from 'axios';
-import * as actionTypes from './actionTypes'
+import * as actionTypes from './actionTypes';
 
 const BASE_URL = 'http://localhost:3001/';
 const REVIEWS_URL = `${BASE_URL}reviews`;
@@ -43,14 +43,16 @@ export const fetchingDataFailed = (error) => (
 export const loadReviews = () => {
     return function (dispatch) {
         dispatch(dataRequested())
-        axios.get(REVIEWS_URL)
-            .then(response => {
-                const reviews = response.data
-                dispatch(reviewsLoaded(reviews))
-            })
-            .catch(error => {
-                dispatch(fetchingDataFailed(error.message))
-            })
+        setTimeout(() => {
+            axios.get(REVIEWS_URL)
+                .then(response => {
+                    const reviews = response.data
+                    dispatch(reviewsLoaded(reviews))
+                })
+                .catch(error => {
+                    dispatch(fetchingDataFailed(error.message))
+                })
+        }, 3000)
     }
 };
 

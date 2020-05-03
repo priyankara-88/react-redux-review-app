@@ -5,6 +5,7 @@ import * as  reviewActions from '../../Redux/actions';
 import ReviewsList from './ReviewsList'
 
 
+
 class ManageReviewsList extends React.Component {
 
     componentDidMount() {
@@ -14,7 +15,7 @@ class ManageReviewsList extends React.Component {
     render() {
         return (
             < div >
-                < ReviewsList reviews={this.props.reviews} />
+                <ReviewsList reviews={this.props.reviews} />
             </div >
         );
     }

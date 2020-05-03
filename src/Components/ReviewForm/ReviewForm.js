@@ -15,6 +15,10 @@ class ReviewForm extends React.Component {
 
     state = { body: '', rating: 0 };
 
+    isValid() {
+
+    }
+
     onBodyTextChange(event) {
         this.setState({ body: event.target.value });
     }
