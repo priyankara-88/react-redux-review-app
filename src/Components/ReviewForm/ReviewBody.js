@@ -1,9 +1,9 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
+import { TextField, InputLabel } from '@material-ui/core';
 
 const styles = {
     textarea: {
-        'height': '100px',
+        'height': '90px',
         'resize': 'none'
     },
 }
@@ -11,21 +11,36 @@ const styles = {
 const placeholderText = 'Description';
 
 class ReviewBody extends React.Component {
+    state = { errorText: '' }
+
+    onInputBodayTextChange(event) {
+        let inputText = event.target.value;
+
+        if (inputText === '') {
+            this.setState({ errorText: 'Input required!' })
+        }
+        else {
+            this.setState({ errorText: '' });
+        }
+
+        this.props.onBodyTextChange(inputText);
+    }
 
     render() {
         return (
-            <Form.Group controlId="formControlsTextarea">
-                <Form.Label>Body</Form.Label>
-                <Form.Control as="textarea" rows="3"
+            <div>
+                <InputLabel>Body</InputLabel >
+                <TextField rows={3}
+                    multiline
                     placeholder={placeholderText}
                     style={styles.textarea}
                     value={this.props.boday}
-                    onChange={this.props.onBodyTextChange}
+                    onChange={this.onInputBodayTextChange.bind(this)}
+                    variant="outlined"
+                    helperText={this.state.errorText}
+                    error={(this.state.errorText === '') ? false : true}
                     required />
-                <Form.Control.Feedback type="invalid">
-                    Please enter a value
-                </Form.Control.Feedback>
-            </Form.Group>
+            </div>
         )
     }
 }

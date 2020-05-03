@@ -1,10 +1,10 @@
 import React from 'react'
-import { ListGroup } from 'react-bootstrap';
+import { List, Typography } from '@material-ui/core';
 import MangeReview from './MangeReview';
 
 const styles = {
     wrapper: {
-        marginTop: '20px'
+        marginTop: '30px'
     }
 }
 
@@ -12,15 +12,14 @@ class ReviewsList extends React.Component {
 
     render() {
         return (
-            <div style={styles.wrapper}>
-                <ListGroup>
-                    <h5>List of reviews...</h5>
-                    {this.props.reviews.map(review => <MangeReview key={review.id} {...review} />)}
-                </ListGroup>
-            </div>
+            <List style={styles.wrapper}>
+                <Typography variant="h6" align='center'>
+                    Reviews List
+                </Typography>
+                {this.props.reviews.map(review => <MangeReview key={review.id} {...review} />)}
+            </List>
         )
     }
-
 }
 
 export default ReviewsList

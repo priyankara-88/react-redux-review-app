@@ -13,7 +13,7 @@ export const LoadingDisplay = () => {
                 alignItems: "center"
             }}
         >
-            <Loader type="ThreeDots" color="#2BAD60" height="100" width="100" />
+            <Loader type="ThreeDots" color="#002699" />
         </div>
     );
 };

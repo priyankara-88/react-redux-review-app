@@ -1,12 +1,6 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
 import StarRatingComponent from 'react-star-rating-component';
-
-const styles = {
-    label: {
-        display: 'block'
-    }
-}
+import { InputLabel } from '@material-ui/core';
 
 /*
     react-star-rating-component
@@ -15,17 +9,19 @@ const styles = {
 
 class ReviewStarRating extends React.Component {
 
+    onStarClick(nextValue, prevValue) {
+        this.props.onChangeRating(nextValue)
+    }
+
     render() {
         return (
-            <Form.Group>
-                <Form.Label style={styles.label}>
-                    Rating
-                </Form.Label>
+            <div>
+                <InputLabel> Rating </InputLabel >
                 <StarRatingComponent
                     name="star-rating"
-                    onStarClick={this.props.onChangeRating}
+                    onStarClick={this.onStarClick.bind(this)}
                 />
-            </Form.Group>
+            </div>
         )
     }
 }

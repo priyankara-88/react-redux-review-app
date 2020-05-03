@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import * as  reviewActions from '../../Redux/actions';
 import ReviewsList from './ReviewsList'
 
@@ -14,9 +13,9 @@ class ManageReviewsList extends React.Component {
 
     render() {
         return (
-            < div >
+            <div>
                 <ReviewsList reviews={this.props.reviews} />
-            </div >
+            </div>
         );
     }
 }
