@@ -11,7 +11,7 @@ App was built using **React** to manage reviews
 * Used **axios** for async API calls
 * Save / Delete the reviews using a button
 * Form validation
-* Message on success of failure
+* Message on success or failure
 * Delay API calls with a fake loading state
 * Used styles - **Material UI**
 * Add some tests using **Jest** and **Enzyme**
